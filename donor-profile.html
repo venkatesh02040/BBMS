@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Donor Profile</title>
+  <link rel="stylesheet" href="donor-profile.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Donor Profile</h2>
+    <div class="profile-card" id="profileCard">
+      <!-- Donor info dynamically inserted here -->
+    </div>
+    <a href="donor-details.html" class="back-btn">← Back to Donors List</a>
+  </div>
+
+  <script>
+    const profileCard = document.getElementById("profileCard");
+    const donor = JSON.parse(localStorage.getItem("selectedDonor"));
+
+    if (donor) {
+      profileCard.innerHTML = `
+        <h3>${donor.name}</h3>
+        <p><strong>Blood Group:</strong> ${donor.bloodGroup}</p>
+        <p><strong>City:</strong> ${donor.city}</p>
+        <p><strong>Contact:</strong> ${donor.phone}</p>
+        <p><strong>Aadhaar:</strong> ${donor.aadhar}</p>
+        <p><strong>Last Donated:</strong> ${donor.lastDonated || 'N/A'}</p>
+        <p><strong>Eligible Again:</strong> ${donor.nextEligible || 'Calculated after donation'}</p>
+      `;
+    } else {
+      profileCard.innerHTML = `<p>No donor details found.</p>`;
+    }
+  </script>
+</body>
+</html>

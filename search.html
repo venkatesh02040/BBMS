@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Blood Donors - Blood Bank</title>
+  <link rel="stylesheet" href="search.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Search for Blood Donors</h2>
+
+    <form id="searchForm">
+      <label for="bloodGroupSearch">Blood Group</label>
+      <select id="bloodGroupSearch">
+        <option value="">Select</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+        <option>O+</option>
+        <option>O-</option>
+      </select>
+
+      <label for="citySearch">City</label>
+      <input type="text" id="citySearch" placeholder="Enter City" />
+
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="donorResults" class="donor-results">
+      <!-- Donors will be displayed here -->
+    </div>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+
+  <script src="search.js"></script>
+</body>
+</html>
